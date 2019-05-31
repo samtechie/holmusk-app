@@ -12,6 +12,10 @@ everything up.
 * [Sass] compilation
 * [Parcel] hot-reloading and bundling 
 
+Additional goodies:
+
+* [editorconfig]
+
 ## Usage
 
 This starter template requires that [Node.js] is installed on your system.
@@ -72,6 +76,7 @@ able to simultaneously work on older projects which are not migrated to Elm 0.19
 
 
 [Bulma]: https://bulma.io/
+[editorconfig]: https://editorconfig.org/
 [Elm]: https://elm-lang.org/
 [elm-format]: https://github.com/avh4/elm-format
 [Elm Test]: https://package.elm-lang.org/packages/elm-explorations/test/latest
