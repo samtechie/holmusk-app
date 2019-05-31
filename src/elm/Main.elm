@@ -8,6 +8,7 @@ import Html.Attributes exposing (class)
 main =
     section [ class "section" ]
         [ div [ class "container" ]
-            [ h1 [ class "title" ] [ text "Hello, Narrator!" ]
+            [ h1 [ class "title" ]
+                [ text "Hello, Elm App Starter" ]
             ]
         ]
