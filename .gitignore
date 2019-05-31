@@ -1,0 +1,24 @@
+# Elm
+elm-stuff
+repl-temp-*
+
+# npm
+node_modules/
+
+# parcel bundler
+.cache/
+dist/
+
+# Eclipse
+.project
+.settings/
+/*.launch
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-workspace
+
+# application specific

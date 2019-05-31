@@ -1,0 +1,30 @@
+{
+  "name": "elm-bulma-parcel-starter",
+  "version": "1.0.0",
+  "description": "Template for new Elm + Bulma projects using Parcel",
+  "author": "haraldmaida",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haraldmaida/elm-bulma-parcel-starter.git"
+  },
+  "main": "src/index.html",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "check": "cross-env NODE_ENV=development parcel build src/index.html --no-minify",
+    "format": "elm-format src/elm/",
+    "test": "elm-test"
+  },
+  "devDependencies": {
+    "bulma": "^0.7.5",
+    "cross-env": "^5.2.0",
+    "elm": "0.19.0-bugfix6",
+    "elm-format": "^0.8",
+    "elm-hot": "^1.0.1",
+    "elm-test": "^0.19.0-rev6",
+    "node-elm-compiler": "^5.0.3",
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.20.1"
+  }
+}
