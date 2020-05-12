@@ -5,7 +5,7 @@ everything up.
 
 ## Includes
 
-* [Elm] 0.19
+* [Elm] 0.19.1
 * [Elm Test]
 * [elm-format]
 * [Bulma]
