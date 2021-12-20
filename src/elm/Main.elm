@@ -154,25 +154,7 @@ view model =
         [ section [ class "section" ]
             [ div [ class "container " ]
                 [ div [ class "columns is-centered box" ]
-                    [ div [ class "column " ]
-                        [ h1 [] [ text "OVERALL" ]
-                        , text "Selected:"
-                        , div []
-                            (List.map
-                                (\option ->
-                                    let
-                                        value =
-                                            Dict.get option model.options
-                                    in
-                                    if value == Just True then
-                                        text <| " " ++ option
-
-                                    else
-                                        text " "
-                                )
-                                (Dict.keys model.options)
-                            )
-                        ]
+                    [ listOptions "OVERALL" model.options
                     , dropdownElement "dropdown-menu1" model model.options ToggleOptions
                     ]
                 , div [ class "columns is-centered has-background-grey-lighter" ]
@@ -183,25 +165,7 @@ view model =
                             [ div [ class "tile is-parent" ]
                                 [ div [ class "tile is-child box" ]
                                     [ div [ class "columns" ]
-                                        [ div [ class "column" ]
-                                            [ h1 [] [ text "CATEGORY 1" ]
-                                            , text "Selected:"
-                                            , div []
-                                                (List.map
-                                                    (\option ->
-                                                        let
-                                                            value =
-                                                                Dict.get option model.options1
-                                                        in
-                                                        if value == Just True then
-                                                            text <| " " ++ option
-
-                                                        else
-                                                            text " "
-                                                    )
-                                                    (Dict.keys model.options1)
-                                                )
-                                            ]
+                                        [ listOptions "CATEGORY 1" model.options1
                                         , dropdownElement "dropdown-menu2" model model.options1 ToggleOptions1
                                         ]
                                     ]
@@ -211,51 +175,13 @@ view model =
                             [ div [ class "tile is-parent" ]
                                 [ div [ class "tile is-child box" ]
                                     [ div [ class "columns" ]
-                                        [ div [ class "column" ]
-                                            [ h1 []
-                                                [ text "CATEGORY 2"
-                                                ]
-                                            , text "Selected:"
-                                            , div []
-                                                (List.map
-                                                    (\option ->
-                                                        let
-                                                            value =
-                                                                Dict.get option model.options2
-                                                        in
-                                                        if value == Just True then
-                                                            text <| " " ++ option
-
-                                                        else
-                                                            text " "
-                                                    )
-                                                    (Dict.keys model.options2)
-                                                )
-                                            ]
+                                        [ listOptions "CATEGORY 2" model.options2
                                         , dropdownElement "dropdown-menu3" model model.options2 ToggleOptions2
                                         ]
                                     ]
                                 , div [ class "tile is-child  box" ]
                                     [ div [ class "columns" ]
-                                        [ div [ class "column" ]
-                                            [ h1 [] [ text "CATEGORY 3" ]
-                                            , text "Selected:"
-                                            , div []
-                                                (List.map
-                                                    (\option ->
-                                                        let
-                                                            value =
-                                                                Dict.get option model.options3
-                                                        in
-                                                        if value == Just True then
-                                                            text <| " " ++ option
-
-                                                        else
-                                                            text " "
-                                                    )
-                                                    (Dict.keys model.options3)
-                                                )
-                                            ]
+                                        [ listOptions "CATEGORY 3" model.options3
                                         , dropdownElement "dropdown-menu4" model model.options3 ToggleOptions3
                                         ]
                                     ]
@@ -314,3 +240,26 @@ dropdownElement dropdown model options toMsg =
                     ]
                 ]
             ]
+
+
+listOptions : String -> Dict.Dict Option Bool -> Html Msg
+listOptions section options =
+    div [ class "column" ]
+        [ h1 [] [ text section ]
+        , text "Selected:"
+        , div []
+            (List.map
+                (\option ->
+                    let
+                        value =
+                            Dict.get option options
+                    in
+                    if value == Just True then
+                        text <| " " ++ option
+
+                    else
+                        text " "
+                )
+                (Dict.keys options)
+            )
+        ]
